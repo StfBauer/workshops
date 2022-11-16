@@ -1,0 +1,45 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "stickyheader-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/stickyheader/StickyheaderWebPart.js",
+          "manifest": "./src/webparts/stickyheader/StickyheaderWebPart.manifest.json"
+        }
+      ]
+    },
+    "carcard-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/carcard/CarcardWebPart.js",
+          "manifest": "./src/webparts/carcard/CarcardWebPart.manifest.json"
+        }
+      ]
+    },
+    "custom-properties-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/customProperties/CustomPropertiesWebPart.js",
+          "manifest": "./src/webparts/customProperties/CustomPropertiesWebPart.manifest.json"
+        }
+      ]
+    },
+    "the-grid-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/theGrid/TheGridWebPart.js",
+          "manifest": "./src/webparts/theGrid/TheGridWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "StickyheaderWebPartStrings": "lib/webparts/stickyheader/loc/{locale}.js",
+    "CarcardWebPartStrings": "lib/webparts/carcard/loc/{locale}.js",
+    "CustomPropertiesWebPartStrings": "lib/webparts/customProperties/loc/{locale}.js",
+    "TheGridWebPartStrings": "lib/webparts/theGrid/loc/{locale}.js"
+  }
+}

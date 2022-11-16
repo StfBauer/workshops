@@ -1,0 +1,81 @@
+$green: #a7bb38;
+$blue: #318eb1;
+$teal: #20a5ac;
+$yellow: #eeb405;
+$orange: #ee9105;
+$red: #dd314d; // switch to global page scope
+
+
+
+.theGrid {
+  height: 10vh;
+  display: grid;
+  gap: 32px;
+  // display: flex;
+  // align-content: center;
+  // align-items: center;
+  // font-weight: bold;
+  // justify-content: center;
+  // align-self: center;
+  // box-sizing: border-box;
+}
+.gridItem{
+  grid-column: auto / span 4;
+  background-color: $blue;
+  color: white;
+}
+
+@mixin optimizeWebpart($gridcolumns) {
+  // Set the CSS Module scope to global
+  :global {
+    // inject column setup here e.g. .CanvasSection-xl12
+    #{$gridcolumns} {
+      // switch again the scope to local for the web part
+      // ⚠️☠️ DO NOT ADD ANY OTHER STYLE IN HERE ☠️⚠️
+      :local {
+        // include content of mixin in here
+        @content;
+      }
+    }
+  }
+}
+
+//Canvas Section CanvasSection-xl12
+@include optimizeWebpart(".CanvasSection-xl12") {
+  .theGrid {
+    grid-template-columns: repeat(12, 1fr);
+
+    background-color: $red;
+    color: white;
+  }
+}
+
+// Canvas Section CanvasSection-xl6
+@include optimizeWebpart(".CanvasSection-xl8") {
+  .theGrid {
+    grid-template-columns: repeat(8, 1fr);
+    background-color: $green;
+  }
+}
+
+// Canvas Section CanvasSection-xl6
+@include optimizeWebpart(".CanvasSection-xl6") {
+  .theGrid {
+    grid-template-columns: repeat(6, 1fr);
+    background-color: $teal;
+  }
+  .gridItem{
+    grid-column: auto / span 3;
+    background-color: $blue;
+    color: white;
+  }
+}
+
+// Canvas Section CanvasSection-xl6
+@include optimizeWebpart(".CanvasSection-xl4") {
+  .theGrid {
+    grid-template-columns: repeat(4, 1fr);
+    background-color: $yellow;
+    color: black;
+  }
+}

@@ -1,0 +1,20 @@
+.stickyheader{
+	// position: relative;
+
+	// overflow: scroll;
+
+	// height: 50vh;
+  content: "";
+}
+h2{
+	position: sticky;
+	top: 0;
+	right: 0;
+	left: 0;
+
+	box-sizing: border-box;
+	margin: 0;
+	padding: .83em 0;
+
+	background-color: white;
+}
